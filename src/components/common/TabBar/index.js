@@ -17,7 +17,7 @@ import {
 } from "react-icons/bs";
 
 export default function TabBar() {
-  const fontSzie = 18;
+  const fontSzie = 19;
   const fontColor = "#121212";
   const atcColor = "#ff0000";
   const location = useLocation();
@@ -102,7 +102,12 @@ export default function TabBar() {
               size={fontSzie}
               color={navItem.isAtc ? atcColor : fontColor}
             />
-            <span className="text-xs text-[#3e3e3e] mt-[5px] antialiased">
+            <span
+              className={[
+                "text-xs  mt-[5px] antialiased",
+                navItem.isAtc ? `text-[${atcColor}]` : `text-[${fontColor}]`,
+              ].join(" ")}
+            >
               {navItem.label}
             </span>
           </li>
