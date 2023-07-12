@@ -8,5 +8,6 @@
 
 const config = {
   USER_TOKEN: "userToken",
+  BLOCK_GAP: "20px"
 };
 export default config;

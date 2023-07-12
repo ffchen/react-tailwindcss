@@ -12,13 +12,13 @@ import { BsController, BsDownload, BsClock, BsSearch } from "react-icons/bs";
 
 export default function SearchBar() {
   const searchIconColor = "#fff";
-  const rightIconColor = "#000";
+  const rightIconColor = "#fff";
   const rightIconSize = 22;
   const navigate = useNavigate();
   let [searchTxt, setSearchTxt] = useState(null);
 
   useMount(() => {
-    setSearchTxt("输出内容！");
+    setSearchTxt("输入您感兴趣的内容");
   });
 
   return (

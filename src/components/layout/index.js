@@ -11,7 +11,7 @@ import TabBar from "@/components/common/TabBar";
 
 export default function Layout() {
   return (
-    <div className="w-full h-screen flex flex-col">
+    <div className="w-full min-h-screen flex flex-col bg-[#f5f5f5]">
       <div className="flex-1 pb-[var(--tabBar-height)]">
         <Outlet/>
       </div>

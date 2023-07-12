@@ -43,3 +43,12 @@ export const getDominantColor = function (image) {
 
   return dominantColor;
 };
+
+// 数组重新分组
+export const splitData = (arr, size) => {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i = i + size) {
+    newArr.push(arr.slice(i, i + size));
+  }
+  return newArr;
+};

@@ -9,24 +9,24 @@ import React, { useState } from "react";
 import { useMount } from "ahooks";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
-  BsFillHouseHeartFill,
-  BsCameraReelsFill,
-  BsFillGiftFill,
-  BsFillHeartPulseFill,
+  BsFillHouseFill,
+  BsSendFill,
+  BsVimeo,
+  BsChatLeftDotsFill,
   BsFillEmojiSmileFill,
 } from "react-icons/bs";
 
 export default function TabBar() {
   const fontSzie = 19;
   const fontColor = "#121212";
-  const atcColor = "#ff0000";
+  const atcColor = "#2e90fa";
   const location = useLocation();
   const navigate = useNavigate();
   const iconComponents = {
-    BsFillHouseHeartFill,
-    BsCameraReelsFill,
-    BsFillGiftFill,
-    BsFillHeartPulseFill,
+    BsFillHouseFill,
+    BsSendFill,
+    BsVimeo,
+    BsChatLeftDotsFill,
     BsFillEmojiSmileFill,
   };
 
@@ -52,27 +52,27 @@ export default function TabBar() {
   let [navList, setNavList] = useState([
     {
       id: 1,
-      icon: "BsFillHouseHeartFill",
+      icon: "BsFillHouseFill",
       label: "首页",
       url: "/",
       isAtc: true,
     },
     {
       id: 2,
-      icon: "BsCameraReelsFill",
-      label: "短视频",
+      icon: "BsSendFill",
+      label: "资讯",
       url: "/news",
     },
     {
       id: 3,
-      icon: "BsFillGiftFill",
+      icon: "BsVimeo",
       label: "VIP",
       url: "/vip",
     },
     {
       id: 4,
-      icon: "BsFillHeartPulseFill",
-      label: "热议",
+      icon: "BsChatLeftDotsFill",
+      label: "消息",
       url: "/msg",
     },
     {
