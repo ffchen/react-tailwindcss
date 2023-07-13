@@ -43,9 +43,9 @@ export default function LeadNews() {
 
   return (
     <div className="mt-3 w-full h-[74px] bg-white rounded-md flex flex-row items-center px-2">
-      <div className="w-[45px] flex flex-col justify-center mr-2">
-        <span className="text-center font-['FZZZHONGJW']">海运</span>
-        <span className="mt-[-4px] text-center text-[#ff0000] font-['FZZZHONGJW']">
+      <div className="w-[45px] flex flex-col justify-center items-cente mr-3">
+        <span className="text-center font-['FZZZHONGJW']  flex-1 mt-[4px]">海运</span>
+        <span className="text-center text-[#ff0000] font-['FZZZHONGJW'] flex-1">
           头条
         </span>
       </div>

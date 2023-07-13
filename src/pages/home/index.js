@@ -10,6 +10,8 @@ import SearchBar from "@/components/common/SearchBar";
 import HomeSlider from "@/components/home/Slider";
 import InfoNav from "@/components/home/InfoNav";
 import LeadNews from "@/components/home/LeadNews";
+import RecentOrder from "@/components/home/RecentOrder";
+import HomeBanner from "@/components/common/Banner";
 
 export default function Home() {
   const [imageUrl, setImageUrl] = useState("");
@@ -31,6 +33,8 @@ export default function Home() {
         <HomeSlider getImage={getSliderImage} />
         <InfoNav />
         <LeadNews />
+        <RecentOrder />
+        <HomeBanner id={11306}/>
       </div>
     </div>
   );

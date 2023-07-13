@@ -16,3 +16,11 @@ export function getBanner(params) {
     params,
   });
 }
+
+
+export function getRecentOrders(params) {
+  return service(`/xcw/web/2/api/base/getRecentOrders`, {
+    method: "GET",
+    params,
+  });
+}
