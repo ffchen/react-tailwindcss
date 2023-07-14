@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import { getNewsInfoListNew } from "@/apis/news";
 
-function App() {
+export default function NewsList() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
 
   const observer = useRef();
 
-  const fetchData = async () => {
+  async function fetchData() {
     setIsLoading(true);
     let params = {
       rows: 10,
@@ -26,14 +26,14 @@ function App() {
       setData((prevData) => [...prevData, ...list]);
       setIsLoading(false);
     }
-  };
+  }
 
-  const handleObserver = (entries) => {
+  function handleObserver(entries) {
     const target = entries[0];
     if (target.isIntersecting && !isLoading) {
       setPage((prevPage) => prevPage + 1);
     }
-  };
+  }
 
   useEffect(() => {
     observer.current = new IntersectionObserver(handleObserver);
@@ -59,9 +59,12 @@ function App() {
       <ul>
         {data.map((item, index) => (
           <li key={index} className="flex flex-row py-3 border-b border-[#eee]">
-             <span className="flex-1">{item.title}</span>
-            <img src={item.imgUrl} alt={item.title} className="w-[112px] h-[75px] rounded-md ml-[20px]" />
-           
+            <span className="flex-1">{item.title}</span>
+            <img
+              src={item.imgUrl}
+              alt={item.title}
+              className="w-[112px] h-[75px] rounded-md ml-[20px]"
+            />
           </li>
         ))}
       </ul>
@@ -69,5 +72,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
