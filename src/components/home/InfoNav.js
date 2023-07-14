@@ -34,7 +34,7 @@ export default function InfoNav() {
     },
   ]);
   return (
-    <div className="flex mt-2 gap-2.5">
+    <div className="flex mt-3 gap-2.5">
       {navList.map((item, index) => (
         <div
           className={`flex-1 h-[80px] rounded-md text-white flex flex-col p-3.5 relative overflow-hidden bg-[${item.bg}] `}

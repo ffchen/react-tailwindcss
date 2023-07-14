@@ -1,9 +1,17 @@
+/*
+ * @Author: ff-chen
+ * @Date: 2023-07-11 11:46:28
+ * @FilePath: /qq-video/src/routes/index.js
+ * @Description: 
+ * Copyright (c) 2023 by ff-chen, All Rights Reserved. 
+ */
 import React, { lazy } from "react";
 import { Navigate, createBrowserRouter } from "react-router-dom";
 import Layout from "@/components/layout";
 
 /** 懒加载 路由组件 **/
 const Home = lazy(() => import("@/pages/home/index"));
+const News = lazy(() => import("@/pages/news/index"));
 const Mine = lazy(() => import("@/pages/mine/index"));
 const Login = lazy(() => import("@/pages/login/index"));
 
@@ -40,6 +48,10 @@ export default createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/news",
+        element: <News />,
       },
       {
         path: "/mine",

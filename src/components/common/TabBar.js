@@ -1,7 +1,7 @@
 /*
  * @Author: ff-chen
  * @Date: 2023-06-26 14:28:22
- * @FilePath: /qq-video/src/components/common/TabBar/index.js
+ * @FilePath: /qq-video/src/components/common/TabBar.js
  * @Description: TabBar
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
@@ -10,7 +10,7 @@ import { useMount } from "ahooks";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   BsFillHouseFill,
-  BsSendFill,
+  BsFillHddRackFill,
   BsVimeo,
   BsChatLeftDotsFill,
   BsFillEmojiSmileFill,
@@ -24,7 +24,7 @@ export default function TabBar() {
   const navigate = useNavigate();
   const iconComponents = {
     BsFillHouseFill,
-    BsSendFill,
+    BsFillHddRackFill,
     BsVimeo,
     BsChatLeftDotsFill,
     BsFillEmojiSmileFill,
@@ -59,7 +59,7 @@ export default function TabBar() {
     },
     {
       id: 2,
-      icon: "BsSendFill",
+      icon: "BsFillHddRackFill",
       label: "资讯",
       url: "/news",
     },
@@ -104,7 +104,7 @@ export default function TabBar() {
             />
             <span
               className={[
-                "text-xs  mt-[5px] antialiased",
+                "text-sm  mt-[5px] antialiased",
                 navItem.isAtc ? `text-[${atcColor}]` : `text-[${fontColor}]`,
               ].join(" ")}
             >

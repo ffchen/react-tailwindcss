@@ -24,3 +24,12 @@ export function getRecentOrders(params) {
     params,
   });
 }
+
+// 便捷服务
+export function getDictByPid(params) {
+  return service({
+    url: `${BANNER_PATH}/getDictByPid`,
+    method: "get",
+    params,
+  });
+}

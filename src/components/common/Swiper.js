@@ -1,19 +1,16 @@
 /*
  * @Author: ff-chen
  * @Date: 2023-07-12 09:15:23
- * @FilePath: /qq-video/src/components/home/Slider.js
+ * @FilePath: /qq-video/src/components/common/Swiper.js
  * @Description:
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React, { useState } from "react";
-import { useMount } from "ahooks";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-import { getBanner } from "@/apis/home";
 
 export default function HomeSlider(props) {
-  const {getImage} =   props
-  const [sliderList, setSliderList] = useState([]);
+  const {getImage, sliderList} =   props
   const settings = {
     dots: true,
     infinite: true,
@@ -42,28 +39,16 @@ export default function HomeSlider(props) {
     ),
 
     afterChange: (currentSlide) => {
-      getImage(sliderList[currentSlide]['imgUrlWx']);
+      getImage(sliderList[currentSlide]['imageUrl']);
     },
   };
 
-  // 获取轮播图数据
-  async function getSwiperDate() {
-    let res = await getBanner({ pageCode: 11303 });
-    if (res.code === 1) return res.data;
-  }
-
-  useMount(async () => {
-    let images = await getSwiperDate();
-    getImage(images[0]['imgUrlWx']);
-    setSliderList([...images]);
-  });
-
   return (
-    <div className="mt-4 rounded-md relative overflow-hidden">
+    <div className="mt-4 rounded-md relative h-[150px] overflow-hidden">
       <Slider {...settings}>
-        {sliderList.map((item) => (
-          <div key={item.pageName}>
-            <img src={item.imgUrlWx} alt={item.pageName} />
+        {sliderList.map((item, index) => (
+          <div key={index}>
+            <img src={item.imageUrl} alt={item.title} className="w-full h-[150px]" />
           </div>
         ))}
       </Slider>

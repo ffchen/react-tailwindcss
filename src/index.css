@@ -2,11 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: "FZZZHONGJW";
-    src: url("~@/static/font/FZZZHONGJW.TTF") format("truetype");
+@layer utilities {
+  @variants responsive {
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
   }
+}
+
+
+@font-face {
+  font-family: "FZZZHONGJW";
+  src: url("~@/static/font/FZZZHONGJW.TTF") format("truetype");
+}
 
 :root {
-    --tabBar-height: 70px;
+  --tabBar-height: 70px;
 }

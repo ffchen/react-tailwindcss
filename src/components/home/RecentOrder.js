@@ -9,6 +9,7 @@ import React, { useState } from "react";
 import { useMount } from "ahooks";
 import { getRecentOrders } from "@/apis/home.js";
 import { BsFillStarFill } from "react-icons/bs";
+import BlockTitle from "@/components/common/BlockTitle";
 export default function RecentOrder() {
   const [orderList, setOrderList] = useState([]);
 
@@ -23,18 +24,13 @@ export default function RecentOrder() {
 
   return (
     <div className="mt-3 w-full bg-white rounded-md flex flex-col p-3">
-      <h3 className="font-['FZZZHONGJW'] flex flex-row items-center">
-        {" "}
-        <i className="block w-[4px] h-[16px] bg-[#2e90fa] mr-1.5"></i>
-        <span>近期成交</span>
-      </h3>
+      <BlockTitle title="近期成交" />
       <ul>
         {orderList.map((item, index) => (
           <li
             key={index}
             className="w-full h-[38px] flex flex-row items-center text-left overflow-hidden  text-ellipsis whitespace-nowrap border-b border-[#f5f5f5]"
           >
-           
             <span className="w-[16px]">
               <BsFillStarFill size={9} />
             </span>

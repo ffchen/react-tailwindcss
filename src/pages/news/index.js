@@ -1,19 +1,18 @@
 /*
  * @Author: ff-chen
- * @Date: 2023-06-26 14:10:03
- * @FilePath: /qq-video/src/pages/home/index.js
+ * @Date: 2023-07-14 10:20:43
+ * @FilePath: /qq-video/src/pages/news/index.js
  * @Description:
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React, { useState } from "react";
 import { useMount } from "ahooks";
 import SearchBar from "@/components/common/SearchBar";
-import HomeSwiper from "@/components/common/Swiper";
-import InfoNav from "@/components/home/InfoNav";
-import LeadNews from "@/components/home/LeadNews";
-import RecentOrder from "@/components/home/RecentOrder";
-import HomeBanner from "@/components/common/Banner";
-import HomeNav from "@/components/home/HomeNav";
+import NewsNav from "@/components/news/NewsNav";
+import NewsSwiper from "@/components/common/Swiper";
+import NewsInfo from "@/components/news/NewsInfo";
+import FreightRate from "@/components/news/FreightRate";
+import NewsList from "@/components/news/NewsList";
 import { getBanner } from "@/apis/home";
 
 export default function Home() {
@@ -26,15 +25,17 @@ export default function Home() {
 
   // 获取轮播图数据
   async function getSwiperDate() {
-    let res = await getBanner({ pageCode: 11303 });
-    let {code,data} = res
+    let res = await getBanner({ pageCode: 11302 });
+    let { code, data } = res;
     if (code === 1) {
-      setSliderList(data.map( item => ({
-        imageUrl: item.imgUrlWx,
-        title: item.pageName
-      })))
-      setImageUrl(data[0]['imgUrlWx'])
-    };
+      setSliderList(
+        data.map((item) => ({
+          imageUrl: item.imgUrl,
+          title: item.pageName,
+        }))
+      );
+      setImageUrl(data[0]["imgUrl"]);
+    }
   }
 
   useMount(async () => {
@@ -51,12 +52,11 @@ export default function Home() {
       </div>
       <div className="relative z-[9]">
         <SearchBar />
-        <HomeSwiper getImage={getSliderImage} sliderList={sliderList} />
-        <InfoNav />
-        <LeadNews />
-        <RecentOrder />
-        <HomeBanner id={11306} />
-        <HomeNav />
+        <NewsNav />
+        <NewsSwiper getImage={getSliderImage} sliderList={sliderList} />
+        <NewsInfo />
+        <FreightRate />
+        <NewsList />
       </div>
     </div>
   );
