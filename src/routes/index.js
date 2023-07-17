@@ -16,6 +16,7 @@ const Vip = lazy(() => import("@/pages/vip/index"));
 const Msg = lazy(() => import("@/pages/msg/index"));
 const Mine = lazy(() => import("@/pages/mine/index"));
 const Login = lazy(() => import("@/pages/login/index"));
+const Search = lazy(() => import("@/pages/search/index"));
 
 /** 路由守卫功能 **/
 const PrivateRoute = ({ component: Component, isLoggedIn, ...rest }) => {
@@ -72,5 +73,9 @@ export default createBrowserRouter([
   {
     path: "login",
     element: <Login />,
+  },
+  {
+    path: "search",
+    element: <Search />,
   },
 ]);

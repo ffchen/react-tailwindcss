@@ -1,12 +1,12 @@
 /*
  * @Author: ff-chen
  * @Date: 2023-07-11 16:11:05
- * @FilePath: /qq-video/src/components/common/SearchBar/index.js
+ * @FilePath: /qq-video/src/components/common/SearchBar.js
  * @Description:
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React, { useState } from "react";
-import { useMount } from "ahooks";
+import React, { useState, useEffect } from "react";
+// import { useMount } from "ahooks";
 import { useNavigate } from "react-router-dom";
 import { BsController, BsDownload, BsClock, BsSearch } from "react-icons/bs";
 
@@ -17,9 +17,21 @@ export default function SearchBar() {
   const navigate = useNavigate();
   let [searchTxt, setSearchTxt] = useState(null);
 
-  useMount(() => {
-    setSearchTxt("输入您感兴趣的内容");
-  });
+  // 模拟 获取 热门搜索词
+  function getHotLabel() {
+    const hotLabels = ['船查查','船货保险','航运圈','近期成交', '海运头条'];
+    const len = hotLabels.length;
+    let randomNum = Math.floor(Math.random() * len);
+    setSearchTxt(hotLabels[randomNum])
+  }
+
+  useEffect(() => {
+    getHotLabel();
+    const interval = setInterval(getHotLabel, 5000); // 每隔 5 秒重新获取热搜词
+    return () => clearInterval(interval); // 组件卸载时清除定时器
+  }, []);
+
+
 
   return (
     <div className="flex flex-row box-border w-full items-center">
