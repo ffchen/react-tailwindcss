@@ -2,8 +2,8 @@
  * @Author: ff-chen
  * @Date: 2023-07-11 11:46:28
  * @FilePath: /qq-video/src/routes/index.js
- * @Description: 
- * Copyright (c) 2023 by ff-chen, All Rights Reserved. 
+ * @Description:
+ * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React, { lazy } from "react";
 import { Navigate, createBrowserRouter } from "react-router-dom";
@@ -12,6 +12,8 @@ import Layout from "@/components/layout";
 /** 懒加载 路由组件 **/
 const Home = lazy(() => import("@/pages/home/index"));
 const News = lazy(() => import("@/pages/news/index"));
+const Vip = lazy(() => import("@/pages/vip/index"));
+const Msg = lazy(() => import("@/pages/msg/index"));
 const Mine = lazy(() => import("@/pages/mine/index"));
 const Login = lazy(() => import("@/pages/login/index"));
 
@@ -52,6 +54,14 @@ export default createBrowserRouter([
       {
         path: "/news",
         element: <News />,
+      },
+      {
+        path: "/vip",
+        element: <Vip />,
+      },
+      {
+        path: "/msg",
+        element: requireAuth(Msg),
       },
       {
         path: "/mine",

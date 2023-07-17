@@ -55,7 +55,7 @@ export default function NewsList() {
   }, [data]);
 
   return (
-    <div className="mt-3 w-full bg-white rounded-md flex flex-row items-center p-3">
+    <div className="mt-3 w-full bg-white rounded-md flex flex-col items-center p-3">
       <ul>
         {data.map((item, index) => (
           <li key={index} className="flex flex-row py-3 border-b border-[#eee]">
@@ -68,7 +68,7 @@ export default function NewsList() {
           </li>
         ))}
       </ul>
-      <div id="observer">{isLoading && "Loading..."}</div>
+      <div id="observer" className="py-3 text-[#333] text-sm">{isLoading && "Loading..."}</div>
     </div>
   );
 }
