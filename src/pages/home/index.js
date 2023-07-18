@@ -1,7 +1,7 @@
 /*
  * @Author: ff-chen
  * @Date: 2023-06-26 14:10:03
- * @FilePath: /qq-video/src/pages/home/index.js
+ * @FilePath: /react-tailwindcss/src/pages/home/index.js
  * @Description:
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
@@ -27,14 +27,16 @@ export default function Home() {
   // 获取轮播图数据
   async function getSwiperDate() {
     let res = await getBanner({ pageCode: 11303 });
-    let {code,data} = res
+    let { code, data } = res;
     if (code === 1) {
-      setSliderList(data.map( item => ({
-        imageUrl: item.imgUrlWx,
-        title: item.pageName
-      })))
-      setImageUrl(data[0]['imgUrlWx'])
-    };
+      setSliderList(
+        data.map((item) => ({
+          imageUrl: item.imgUrlWx,
+          title: item.pageName,
+        }))
+      );
+      setImageUrl(data[0]["imgUrlWx"]);
+    }
   }
 
   useMount(async () => {

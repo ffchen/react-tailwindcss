@@ -1,14 +1,14 @@
 /*
  * @Author: ff-chen
  * @Date: 2023-06-26 11:27:47
- * @FilePath: /qq-video/src/index.js
- * @Description: 
- * Copyright (c) 2023 by ff-chen, All Rights Reserved. 
+ * @FilePath: /react-tailwindcss/src/index.js
+ * @Description:
+ * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
-import store from './store';
+import store from "./store";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";

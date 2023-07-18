@@ -1,7 +1,7 @@
 /*
  * @Author: ff-chen
  * @Date: 2023-07-17 14:22:56
- * @FilePath: /qq-video/src/store/reducers/index.js
+ * @FilePath: /react-tailwindcss/src/store/reducers/index.js
  * @Description:
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
@@ -10,7 +10,7 @@ import { combineReducers } from "redux";
 import actions from "../actions";
 
 const initialState = {
-  hotWord: '',
+  hotWord: "",
 };
 
 function hotWord(state = initialState, action) {

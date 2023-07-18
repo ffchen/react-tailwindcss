@@ -1,3 +1,10 @@
+/*
+ * @Author: ff-chen
+ * @Date: 2023-07-14 10:56:57
+ * @FilePath: /react-tailwindcss/src/components/news/NewsNav.js
+ * @Description: 
+ * Copyright (c) 2023 by ff-chen, All Rights Reserved. 
+ */
 import React, { useState } from "react";
 import { useMount } from "ahooks";
 import { getNewsTypeList } from "@/apis/news";
@@ -24,12 +31,15 @@ export default function NewsNav() {
       <div className="flex-1 overflow-hidden">
         <div className="flex flex-row overflow-x-scroll no-scrollbar">
           {typeList.map((item) => (
-            <em key={item.id} 
-            className={[
+            <em
+              key={item.id}
+              className={[
                 "not-italic whitespace-nowrap mr-4 font-['FZZZHONGJW']  text-sm",
-                item.id=== 1 ? `text-[#ffc100]` : `text-white`,
+                item.id === 1 ? `text-[#ffc100]` : `text-white`,
               ].join(" ")}
-            >{item.typeName}</em>
+            >
+              {item.typeName}
+            </em>
           ))}
         </div>
       </div>

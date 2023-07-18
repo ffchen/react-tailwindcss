@@ -1,7 +1,7 @@
 /*
  * @Author: ff-chen
  * @Date: 2023-07-12 09:15:23
- * @FilePath: /qq-video/src/components/common/Swiper.js
+ * @FilePath: /react-tailwindcss/src/components/common/Swiper.js
  * @Description:
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
@@ -10,7 +10,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 
 export default function HomeSlider(props) {
-  const {getImage, sliderList} =   props
+  const { getImage, sliderList } = props;
   const settings = {
     dots: true,
     infinite: true,
@@ -39,7 +39,7 @@ export default function HomeSlider(props) {
     ),
 
     afterChange: (currentSlide) => {
-      getImage(sliderList[currentSlide]['imageUrl']);
+      getImage(sliderList[currentSlide]["imageUrl"]);
     },
   };
 
@@ -48,7 +48,11 @@ export default function HomeSlider(props) {
       <Slider {...settings}>
         {sliderList.map((item, index) => (
           <div key={index}>
-            <img src={item.imageUrl} alt={item.title} className="w-full h-[150px]" />
+            <img
+              src={item.imageUrl}
+              alt={item.title}
+              className="w-full h-[150px]"
+            />
           </div>
         ))}
       </Slider>

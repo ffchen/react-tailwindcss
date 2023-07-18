@@ -1,14 +1,14 @@
 /*
  * @Author: ff-chen
  * @Date: 2023-07-11 16:11:05
- * @FilePath: /qq-video/src/components/common/SearchBar.js
+ * @FilePath: /react-tailwindcss/src/components/common/SearchBar.js
  * @Description:
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { BsController, BsDownload, BsClock, BsSearch } from "react-icons/bs";
-import {  useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 
 export default function SearchBar(props) {
   const searchIconColor = "#fff";
@@ -18,28 +18,25 @@ export default function SearchBar(props) {
   let [searchTxt, setSearchTxt] = useState(null);
   const dispatch = useDispatch();
 
-
   // 模拟 获取 热门搜索词
   function getHotLabel() {
-    const hotLabels = ['船查查','船货保险','航运圈','近期成交', '海运头条'];
+    const hotLabels = ["船查查", "船货保险", "航运圈", "近期成交", "海运头条"];
     const len = hotLabels.length;
     let randomNum = Math.floor(Math.random() * len);
-    setSearchTxt(hotLabels[randomNum])
+    setSearchTxt(hotLabels[randomNum]);
   }
 
-  // store 
+  // store
   function goSearch() {
-    dispatch({ type: 'SET_HOT_WORDS', payload: searchTxt });
-    navigate("/search")
+    dispatch({ type: "SET_HOT_WORDS", payload: searchTxt });
+    navigate("/search");
   }
-  
+
   useEffect(() => {
     getHotLabel();
     const interval = setInterval(getHotLabel, 5000); // 每隔 5 秒重新获取热搜词
     return () => clearInterval(interval); // 组件卸载时清除定时器
   }, []);
-
-
 
   return (
     <div className="flex flex-row box-border w-full items-center">

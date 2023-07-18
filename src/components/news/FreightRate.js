@@ -1,7 +1,7 @@
 /*
  * @Author: ff-chen
  * @Date: 2023-07-14 14:38:10
- * @FilePath: /qq-video/src/components/news/FreightRate.js
+ * @FilePath: /react-tailwindcss/src/components/news/FreightRate.js
  * @Description:
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
@@ -10,9 +10,7 @@ import { useMount } from "ahooks";
 import { getNewProperties } from "@/apis/news";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-import {
-    BsChevronRight
-  } from "react-icons/bs";
+import { BsChevronRight } from "react-icons/bs";
 
 export default function FreightRate() {
   const [rateList, setRateList] = useState([]);
@@ -85,7 +83,9 @@ export default function FreightRate() {
                   )
                 </span>
               </div>
-              <div className="absolute right-0 top-0 h-[40px] flex items-center"><BsChevronRight  /></div>
+              <div className="absolute right-0 top-0 h-[40px] flex items-center">
+                <BsChevronRight />
+              </div>
             </div>
           ))}
         </Slider>

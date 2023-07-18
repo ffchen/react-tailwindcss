@@ -8,10 +8,5 @@
 import React from "react";
 
 export default function Vip() {
-
-  return (
-    <div className="w-full min-h-screen overflow-hidden">
-      vip
-    </div>
-  );
+  return <div className="w-full min-h-screen overflow-hidden">vip</div>;
 }

@@ -28,6 +28,7 @@ const PrivateRoute = ({ component: Component, isLoggedIn, ...rest }) => {
         pathname: "/login",
         state: { from: rest.location },
       }}
+      replace={true}
     />
   );
 };

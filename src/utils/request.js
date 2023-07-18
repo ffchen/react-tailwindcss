@@ -1,7 +1,7 @@
 /*
  * @Author: ff-chen
  * @Date: 2023-07-11 15:26:16
- * @FilePath: /qq-video/src/utils/request.js
+ * @FilePath: /react-tailwindcss/src/utils/request.js
  * @Description:
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
@@ -18,7 +18,7 @@ const getTokenStorage = () => {
 };
 
 const instance = axios.create({
-  baseURL: "http://pro.xcw9898.com", 
+  baseURL: "http://pro.xcw9898.com",
   timeout: 5000,
 });
 

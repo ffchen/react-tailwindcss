@@ -3,7 +3,7 @@
  * @Date: 2023-06-26 11:30:59
  * @FilePath: /react-tailwindcss/src/utils/tools.js
  * @Description: 工具类 函数
- * Copyright (c) 2023 by ff-chen, All Rights Reserved. 
+ * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 // 获取图片的主色调
 export const getDominantColor = function (image) {

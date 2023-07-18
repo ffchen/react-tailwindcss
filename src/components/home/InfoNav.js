@@ -2,8 +2,8 @@
  * @Author: ff-chen
  * @Date: 2023-07-12 14:44:50
  * @FilePath: /react-tailwindcss/src/components/home/InfoNav.js
- * @Description: 
- * Copyright (c) 2023 by ff-chen, All Rights Reserved. 
+ * @Description:
+ * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React, { useState } from "react";
 import { BsCloudSlash, BsShieldCheck, BsHeartPulse } from "react-icons/bs";
