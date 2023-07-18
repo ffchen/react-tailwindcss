@@ -14,8 +14,8 @@ export default function SearchBar(props) {
   const searchIconColor = "#fff";
   const rightIconColor = "#fff";
   const rightIconSize = 22;
-  const navigate = useNavigate();
   let [searchTxt, setSearchTxt] = useState(null);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   // 模拟 获取 热门搜索词

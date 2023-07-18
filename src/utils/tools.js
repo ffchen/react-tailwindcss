@@ -9,8 +9,7 @@
 export const getDominantColor = function (image) {
   let canvas = document.createElement("canvas");
   let context = canvas.getContext("2d");
-  let width = image.width;
-  let height = image.height;
+  let { width, height } = image;
 
   canvas.width = width;
   canvas.height = height;
@@ -51,4 +50,24 @@ export const splitData = (arr, size) => {
     newArr.push(arr.slice(i, i + size));
   }
   return newArr;
+};
+
+// 防抖
+export const debounce = (func, wait, immediate) => {
+  let timeout;
+
+  return function () {
+    const context = this;
+    const args = arguments;
+
+    const later = function () {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
 };
