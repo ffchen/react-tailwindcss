@@ -1,3 +1,10 @@
+/*
+ * @Author: ff-chen
+ * @Date: 2023-07-12 14:44:50
+ * @FilePath: /react-tailwindcss/src/components/home/InfoNav.js
+ * @Description: 
+ * Copyright (c) 2023 by ff-chen, All Rights Reserved. 
+ */
 import React, { useState } from "react";
 import { BsCloudSlash, BsShieldCheck, BsHeartPulse } from "react-icons/bs";
 
@@ -40,7 +47,7 @@ export default function InfoNav() {
           className={`flex-1 h-[80px] rounded-md text-white flex flex-col p-3.5 relative overflow-hidden bg-[${item.bg}] `}
           key={index}
         >
-          <em className="not-italic font-mono text-base font-['FZZZHONGJW']">
+          <em className="not-italic  text-base font-['FZZZHONGJW']">
             {item.name}
           </em>
           <span className="text-xs mt-0.5">{item.label}</span>

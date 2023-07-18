@@ -1,7 +1,7 @@
 /*
  * @Author: ff-chen
  * @Date: 2023-07-11 11:46:28
- * @FilePath: /qq-video/src/routes/index.js
+ * @FilePath: /react-tailwindcss/src/routes/index.js
  * @Description:
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
@@ -58,7 +58,7 @@ export default createBrowserRouter([
       },
       {
         path: "/vip",
-        element: <Vip />,
+        element: requireAuth(Vip),
       },
       {
         path: "/msg",

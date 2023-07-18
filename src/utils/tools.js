@@ -1,7 +1,7 @@
 /*
  * @Author: ff-chen
  * @Date: 2023-06-26 11:30:59
- * @FilePath: /qq-video/src/utils/tools.js
+ * @FilePath: /react-tailwindcss/src/utils/tools.js
  * @Description: 工具类 函数
  * Copyright (c) 2023 by ff-chen, All Rights Reserved. 
  */
@@ -44,10 +44,10 @@ export const getDominantColor = function (image) {
   return dominantColor;
 };
 
-// 数组重新分组
+// 一维数组转二维数组
 export const splitData = (arr, size) => {
   let newArr = [];
-  for (let i = 0; i < arr.length; i = i + size) {
+  for (let i = 0, len = arr.length; i < len; i = i + size) {
     newArr.push(arr.slice(i, i + size));
   }
   return newArr;
