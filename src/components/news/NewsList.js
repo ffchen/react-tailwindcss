@@ -8,6 +8,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { getNewsInfoListNew } from "@/apis/news";
+import { timeFormat } from "@/utils/filter";
 
 export default function NewsList() {
   const [data, setData] = useState([]);
@@ -67,7 +68,7 @@ export default function NewsList() {
   useEffect(() => {
     getNewsData();
   }, [page, getNewsData]);
-  
+
   // 使用 observer 引用对象来观察页面底部的虚拟加载元素
   useEffect(() => {
     if (observer.current) {
@@ -86,7 +87,14 @@ export default function NewsList() {
       <ul>
         {data.map((item, index) => (
           <li key={index} className="flex flex-row py-3 border-b border-[#eee]">
-            <span className="flex-1">{item.title}</span>
+            <span className="flex-1 flex flex-col">
+              <em className="not-italic h-[48px] line-clamp mb-2">
+                {item.title}
+              </em>
+              <em className="text-[#ccc] text-sm not-italic">
+                {timeFormat(item.createTime)}
+              </em>
+            </span>
             <img
               src={item.imgUrl}
               alt={item.title}
