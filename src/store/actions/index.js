@@ -7,5 +7,6 @@
  */
 const actions = {
   SET_HOT_WORDS: "SET_HOT_WORDS",
+  SET_NEWS_TYPE: "SET_NEWS_TYPE",
 };
 export default actions;

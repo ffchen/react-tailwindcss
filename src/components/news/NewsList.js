@@ -6,20 +6,23 @@
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useSelector } from "react-redux";
 import { getNewsInfoListNew } from "@/apis/news";
 
 export default function NewsList() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
+  const [typeId, setTypeId] = useState(1);
   const observer = useRef();
+
   // 获取资讯数据
   const getNewsData = useCallback(async () => {
     setIsLoading(true);
     let params = {
       rows: 10,
       page,
-      typeId: 1,
+      typeId,
     };
     let res = await getNewsInfoListNew(params);
     let {
@@ -30,7 +33,7 @@ export default function NewsList() {
       setData((prevData) => [...prevData, ...list]);
       setIsLoading(false);
     }
-  }, [page]);
+  }, [page, typeId]);
 
   // 获取观察结果 检测目标元素是否进入视图
   const handleObserver = useCallback(
@@ -42,14 +45,29 @@ export default function NewsList() {
     },
     [isLoading]
   );
+
+  // 监听 newsType 变化
+  const {
+    newsType: { newsType },
+  } = useSelector((state) => state);
+
+  // 当 newsType 变化时 重置 data,page,typeId
+  useEffect(() => {
+    setTypeId(newsType);
+    setData([]);
+    setPage(1);
+  }, [newsType]);
+
   // 创建 IntersectionObserver 实例 并存储在 observer 引用对象中
   useEffect(() => {
     observer.current = new IntersectionObserver(handleObserver);
   }, [handleObserver]);
+
   // 监控 page 变化时，重新加载资讯数据
   useEffect(() => {
     getNewsData();
   }, [page, getNewsData]);
+  
   // 使用 observer 引用对象来观察页面底部的虚拟加载元素
   useEffect(() => {
     if (observer.current) {

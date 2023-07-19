@@ -21,6 +21,7 @@ function App() {
 function mapStateToProps(state) {
   return {
     hotWord: state.hotWord,
+    newsType: state.newsType
   };
 }
 

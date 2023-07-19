@@ -11,6 +11,7 @@ import actions from "../actions";
 
 const initialState = {
   hotWord: "",
+  newsType: 1
 };
 
 function hotWord(state = initialState, action) {
@@ -25,6 +26,19 @@ function hotWord(state = initialState, action) {
   }
 }
 
+function newsType(state = initialState, action) {
+  switch (action.type) {
+    case actions.SET_NEWS_TYPE:
+      return {
+        ...state,
+        newsType: action.payload,
+      };
+    default:
+      return state;
+  }
+}
+
 export default combineReducers({
   hotWord,
+  newsType
 });
