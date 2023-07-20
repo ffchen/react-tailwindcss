@@ -1,8 +1,8 @@
 /*
  * @Author: ff-chen
  * @Date: 2023-07-14 09:15:55
- * @FilePath: /qq-video/src/components/home/HomeNav.js
- * @Description:
+ * @FilePath: /react-tailwindcss/src/components/home/HomeNav.js
+ * @Description: 便捷服务
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React, { useState } from "react";

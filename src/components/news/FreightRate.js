@@ -2,7 +2,7 @@
  * @Author: ff-chen
  * @Date: 2023-07-14 14:38:10
  * @FilePath: /react-tailwindcss/src/components/news/FreightRate.js
- * @Description:
+ * @Description: 运价行情
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React, { useState } from "react";

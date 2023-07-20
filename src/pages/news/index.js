@@ -2,7 +2,7 @@
  * @Author: ff-chen
  * @Date: 2023-07-14 10:20:43
  * @FilePath: /qq-video/src/pages/news/index.js
- * @Description:
+ * @Description:资讯首页
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React, { useState } from "react";

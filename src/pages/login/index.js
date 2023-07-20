@@ -2,7 +2,7 @@
  * @Author: ff-chen
  * @Date: 2023-06-26 17:53:48
  * @FilePath: /react-tailwindcss/src/pages/login/index.js
- * @Description:
+ * @Description:登录页
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import { debounce } from "@/utils/tools";
@@ -17,9 +17,9 @@ export default function Vip() {
   }
 
   return (
-    <div className="w-full h-screen overflow-hidden pb-[var(--tabBar-height)] flex flex-col">
-      <div className="w-full h-full absolute overflow-hidden left-0  top-0 z-[1] after:content-[''] after:block after:w-full after:h-full after:absolute after:left-0  after:top-0 after:z-[2] after:bg-radial">
-        <div className="w-full h-full box-border bg-[url('~@/static/images/vip/bg.avif')] bg-no-repeat bg-[center_top] bg-cover"></div>
+    <div className="w-full h-screen overflow-hidden flex flex-col border">
+      <div className="w-full h-screen absolute overflow-hidden left-0  top-0 z-[1] after:content-[''] after:block after:w-full after:h-full after:absolute after:left-0  after:top-0 after:z-[2] after:bg-radial">
+        <div className="w-full h-screen box-border bg-[url('~@/static/images/vip/bg.avif')] bg-no-repeat bg-[center_top] bg-cover"></div>
       </div>
       <div className="relative p-8 box-border  z-[9] flex flex-col text-[white] mt-16">
         <h3 className="mb-12 text-xl text-center tracking-widest">登录</h3>

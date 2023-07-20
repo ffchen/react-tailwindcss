@@ -2,11 +2,12 @@
  * @Author: ff-chen
  * @Date: 2023-07-12 16:07:55
  * @FilePath: /react-tailwindcss/src/components/home/LeadNews.js
- * @Description:
+ * @Description:首页海运头条模块
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React, { useState } from "react";
 import { useMount } from "ahooks";
+import { useNavigate } from "react-router-dom";
 import { getNewsInfoListNew } from "@/apis/news";
 import { splitData } from "@/utils/tools";
 import Slider from "react-slick";
@@ -14,6 +15,7 @@ import "slick-carousel/slick/slick.css";
 
 export default function LeadNews() {
   const [newsList, setNewsList] = useState([]);
+  const navigate = useNavigate();
   const settings = {
     dots: false,
     infinite: true,
@@ -61,6 +63,7 @@ export default function LeadNews() {
                     <div
                       key={newsItem.id}
                       className="w-full h-[30px] leading-[30px] overflow-hidden text-sm text-ellipsis whitespace-nowrap"
+                      onClick={() => navigate(`/news/${newsItem.id}`)}
                     >
                       {newsItem.title}
                     </div>
@@ -71,6 +74,7 @@ export default function LeadNews() {
                     src={item[0]["imgUrl"]}
                     alt=""
                     className="w-full h-full"
+                    onClick={() => navigate(`/news/${item[0]["id"]}`)}
                   />
                 </div>
               </div>

@@ -2,7 +2,7 @@
  * @Author: ff-chen
  * @Date: 2023-07-17 13:57:08
  * @FilePath: /react-tailwindcss/src/pages/search/index.js
- * @Description:
+ * @Description:搜索页
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React, { useRef, useEffect, useState } from "react";

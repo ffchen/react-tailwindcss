@@ -2,7 +2,7 @@
  * @Author: ff-chen
  * @Date: 2023-07-12 09:15:23
  * @FilePath: /react-tailwindcss/src/components/common/Swiper.js
- * @Description:
+ * @Description: 通用轮播模块
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React from "react";

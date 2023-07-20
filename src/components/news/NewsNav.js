@@ -2,7 +2,7 @@
  * @Author: ff-chen
  * @Date: 2023-07-14 10:56:57
  * @FilePath: /react-tailwindcss/src/components/news/NewsNav.js
- * @Description:
+ * @Description: 资讯分类
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React, { useState } from "react";

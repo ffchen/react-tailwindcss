@@ -2,7 +2,7 @@
  * @Author: ff-chen
  * @Date: 2023-07-11 11:46:28
  * @FilePath: /react-tailwindcss/src/routes/index.js
- * @Description:
+ * @Description: 路由
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React, { lazy } from "react";
@@ -12,6 +12,7 @@ import Layout from "@/components/layout";
 /** 懒加载 路由组件 **/
 const Home = lazy(() => import("@/pages/home/index"));
 const News = lazy(() => import("@/pages/news/index"));
+const NewsDetail = lazy(() => import("@/pages/news/detail"));
 const Vip = lazy(() => import("@/pages/vip/index"));
 const Msg = lazy(() => import("@/pages/msg/index"));
 const Mine = lazy(() => import("@/pages/mine/index"));
@@ -78,5 +79,9 @@ export default createBrowserRouter([
   {
     path: "search",
     element: <Search />,
+  },
+  {
+    path: "/news/:id",
+    element: <NewsDetail />,
   },
 ]);

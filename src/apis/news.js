@@ -1,8 +1,8 @@
 /*
  * @Author: ff-chen
  * @Date: 2023-07-12 16:28:00
- * @FilePath: /qq-video/src/apis/news.js
- * @Description: 
+ * @FilePath: /react-tailwindcss/src/apis/news.js
+ * @Description: 资讯页api
  * Copyright (c) 2023 by ff-chen, All Rights Reserved. 
  */
 import request from "@/utils/request";
@@ -43,7 +43,7 @@ export function getBdiByDate(params) {
   });
 }
 
-//获取新闻属性 GET /{system}/{version}/api/news/getNewProperties
+//获取新闻属性 
 export function getNewProperties(params) {
   return request({
     url: `${URL_PATH}/getNewProperties`,
@@ -52,3 +52,11 @@ export function getNewProperties(params) {
   });
 }
 
+//获取新闻详情 
+export function getNewsInfoDetail(params) {
+  return request({
+    url: `${URL_PATH}/getNewsInfoDetail`,
+    method: "get",
+    params,
+  });
+}

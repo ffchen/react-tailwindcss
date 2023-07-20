@@ -2,10 +2,11 @@
  * @Author: ff-chen
  * @Date: 2023-07-14 17:58:38
  * @FilePath: /react-tailwindcss/src/components/news/NewsList.js
- * @Description:
+ * @Description: 资讯列表
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getNewsInfoListNew } from "@/apis/news";
 import { timeFormat } from "@/utils/filter";
@@ -16,6 +17,7 @@ export default function NewsList() {
   const [page, setPage] = useState(1);
   const [typeId, setTypeId] = useState(1);
   const observer = useRef();
+  const navigate = useNavigate();
 
   // 获取资讯数据
   const getNewsData = useCallback(async () => {
@@ -86,7 +88,11 @@ export default function NewsList() {
     <div className="mt-3 w-full bg-white rounded-md flex flex-col items-center p-3">
       <ul>
         {data.map((item, index) => (
-          <li key={index} className="flex flex-row py-3 border-b border-[#eee]">
+          <li
+            key={index}
+            className="flex flex-row py-3 border-b border-[#eee]"
+            onClick={() => navigate(`/news/${item.id}`)}
+          >
             <span className="flex-1 flex flex-col">
               <em className="not-italic h-[48px] line-clamp mb-2">
                 {item.title}

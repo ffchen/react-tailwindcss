@@ -1,3 +1,10 @@
+/*
+ * @Author: ff-chen
+ * @Date: 2023-07-14 11:46:29
+ * @FilePath: /react-tailwindcss/src/components/news/NewsInfo.js
+ * @Description: BDI指数
+ * Copyright (c) 2023 by ff-chen, All Rights Reserved. 
+ */
 import React, { useState } from "react";
 import { useMount } from "ahooks";
 import moment from "moment";

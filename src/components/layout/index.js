@@ -2,7 +2,7 @@
  * @Author: ff-chen
  * @Date: 2023-06-26 17:14:55
  * @FilePath: /react-tailwindcss/src/components/layout/index.js
- * @Description:
+ * @Description: 布局
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React from "react";

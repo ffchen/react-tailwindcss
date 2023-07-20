@@ -2,7 +2,7 @@
  * @Author: ff-chen
  * @Date: 2023-06-26 14:10:03
  * @FilePath: /react-tailwindcss/src/pages/home/index.js
- * @Description:
+ * @Description:首页
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React, { useState } from "react";

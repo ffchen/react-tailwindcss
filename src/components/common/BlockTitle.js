@@ -2,7 +2,7 @@
  * @Author: ff-chen
  * @Date: 2023-07-14 09:04:41
  * @FilePath: /react-tailwindcss/src/components/common/BlockTitle.js
- * @Description:
+ * @Description: 模块标题
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React from "react";
