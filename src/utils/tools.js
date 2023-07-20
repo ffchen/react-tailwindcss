@@ -6,41 +6,56 @@
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 // 获取图片的主色调
-export const getDominantColor = function (image) {
-  let canvas = document.createElement("canvas");
-  let context = canvas.getContext("2d");
-  let { width, height } = image;
+export const getDominantColor = (imgUrl, callback) => {
+  const img = new Image();
+  img.crossOrigin = "Anonymous";
+  img.src = imgUrl;
 
-  canvas.width = width;
-  canvas.height = height;
-  context.drawImage(image, 0, 0, width, height);
+  img.onload = function () {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
 
-  let imageData = context.getImageData(0, 0, width, height);
-  let data = imageData.data;
-  let colorCount = {};
-  let maxCount = 0;
-  let dominantColor = [0, 0, 0];
+    canvas.width = img.width;
+    canvas.height = img.height;
 
-  for (let i = 0; i < data.length; i += 4) {
-    let red = data[i];
-    let green = data[i + 1];
-    let blue = data[i + 2];
-    let rgb = [red, green, blue];
+    ctx.drawImage(img, 0, 0, img.width, img.height);
 
-    let key = rgb.join(",");
-    if (!colorCount[key]) {
-      colorCount[key] = 0;
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const data = imageData.data;
+
+    const colorMap = {};
+
+    for (let i = 0; i < data.length; i += 4) {
+      const r = data[i];
+      const g = data[i + 1];
+      const b = data[i + 2];
+      const a = data[i + 3];
+
+      if (a === 0) {
+        continue;
+      }
+
+      const color = `rgb(${r},${g},${b})`;
+
+      if (!colorMap[color]) {
+        colorMap[color] = 0;
+      }
+
+      colorMap[color]++;
     }
 
-    colorCount[key]++;
+    let maxCount = 0;
+    let maxColor = "";
 
-    if (colorCount[key] > maxCount) {
-      maxCount = colorCount[key];
-      dominantColor = rgb;
+    for (const color in colorMap) {
+      if (colorMap[color] > maxCount) {
+        maxCount = colorMap[color];
+        maxColor = color;
+      }
     }
-  }
 
-  return dominantColor;
+    callback(maxColor);
+  };
 };
 
 // 一维数组转二维数组

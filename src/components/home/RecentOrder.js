@@ -1,7 +1,7 @@
 /*
  * @Author: ff-chen
  * @Date: 2023-07-12 17:49:55
- * @FilePath: /qq-video/src/components/home/RecentOrder.js
+ * @FilePath: /react-tailwindcss/src/components/home/RecentOrder.js
  * @Description: 近期成交
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
@@ -15,7 +15,7 @@ export default function RecentOrder() {
 
   async function getOrderData() {
     let res = await getRecentOrders();
-    if (res.code === 1) setOrderList(res.data.slice(0, 10));
+    if (res.code === 1) setOrderList(res.data.slice(0, 5));
   }
 
   useMount(() => {
@@ -29,7 +29,7 @@ export default function RecentOrder() {
         {orderList.map((item, index) => (
           <li
             key={index}
-            className="w-full h-[38px] flex flex-row items-center text-left overflow-hidden  text-ellipsis whitespace-nowrap border-b border-[#f5f5f5]"
+            className="w-full h-[38px] flex flex-row items-center text-left overflow-hidden  text-ellipsis whitespace-nowrap border-b border-[#f5f5f5] last:border-0"
           >
             <span className="w-[16px]">
               <BsFillStarFill size={9} />
