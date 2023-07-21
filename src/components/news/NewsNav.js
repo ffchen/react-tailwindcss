@@ -31,6 +31,7 @@ export default function NewsNav() {
   }
 
   useMount(async () => {
+    dispatch({ type: "SET_NEWS_TYPE", payload: 1 });
     getNewsType();
   });
 
