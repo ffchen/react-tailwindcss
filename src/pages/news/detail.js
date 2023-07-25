@@ -22,14 +22,14 @@ export default function NewsDetail() {
     console.log("分享事件");
   }
   // 获取新闻资讯详情
-  async function getDetailData() {
+  async function getDetail() {
     let res = await getNewsInfoDetail({ id });
     const { code, data } = res;
     if (code === 1) setNewsData(data);
   }
 
   useMount(() => {
-    getDetailData();
+    getDetail();
   });
 
   return (

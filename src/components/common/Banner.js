@@ -12,7 +12,7 @@ import { getBanner } from "@/apis/home";
 export default function HomeBanner(props) {
   const [bannerObj, setBannerObj] = useState({});
 
-  const getBannerDate = async () => {
+  const getBannerData = async () => {
     let { id } = props;
     let res = await getBanner({ pageCode: id });
     let { code, data } = res;
@@ -22,7 +22,7 @@ export default function HomeBanner(props) {
   };
 
   useMount(() => {
-    getBannerDate();
+    getBannerData();
   });
 
   return (

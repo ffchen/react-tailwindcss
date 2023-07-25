@@ -25,7 +25,7 @@ export default function Home() {
   }
 
   // 获取轮播图数据
-  async function getSwiperDate() {
+  async function getSwiper() {
     let res = await getBanner({ pageCode: 11303 });
     let { code, data } = res;
     if (code === 1) {
@@ -40,7 +40,7 @@ export default function Home() {
   }
 
   useMount(async () => {
-    getSwiperDate();
+    getSwiper();
   });
 
   return (

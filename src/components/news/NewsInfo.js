@@ -30,7 +30,7 @@ export default function NewsInfo() {
   }
 
   // 获取bdi指数数据
-  async function getBdiData() {
+  async function getBdi() {
     let params = {
       beginTime: moment().subtract(60, "days").format("YYYY-MM-DD"),
       endTime: moment(new Date()).format("YYYY-MM-DD"),
@@ -43,7 +43,7 @@ export default function NewsInfo() {
   }
 
   useMount(() => {
-    getBdiData();
+    getBdi();
   });
 
   return (

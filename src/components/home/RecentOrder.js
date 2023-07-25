@@ -13,13 +13,13 @@ import BlockTitle from "@/components/common/BlockTitle";
 export default function RecentOrder() {
   const [orderList, setOrderList] = useState([]);
 
-  async function getOrderData() {
+  async function getOrder() {
     let res = await getRecentOrders();
     if (res.code === 1) setOrderList(res.data.slice(0, 5));
   }
 
   useMount(() => {
-    getOrderData();
+    getOrder();
   });
 
   return (

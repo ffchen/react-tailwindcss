@@ -27,7 +27,7 @@ export default function FreightRate() {
     verticalSwiping: true,
   };
 
-  async function getNewsData() {
+  async function getNews() {
     let res = await getNewProperties();
     let {
       code,
@@ -37,7 +37,7 @@ export default function FreightRate() {
   }
 
   useMount(() => {
-    getNewsData();
+    getNews();
   });
 
   return (

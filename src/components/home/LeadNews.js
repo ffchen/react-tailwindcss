@@ -29,7 +29,7 @@ export default function LeadNews() {
     verticalSwiping: true,
   };
 
-  async function getNewsData() {
+  async function getNews() {
     let params = {
       rows: 20,
       page: 1,
@@ -40,7 +40,7 @@ export default function LeadNews() {
   }
 
   useMount(() => {
-    getNewsData();
+    getNews();
   });
 
   return (

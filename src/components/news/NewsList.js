@@ -20,7 +20,7 @@ export default function NewsList() {
   const navigate = useNavigate();
 
   // 获取资讯数据
-  const getNewsData = useCallback(async () => {
+  const getNewsList = useCallback(async () => {
     setIsLoading(true);
     let params = {
       rows: 10,
@@ -68,8 +68,8 @@ export default function NewsList() {
 
   // 监控 page 变化时，重新加载资讯数据
   useEffect(() => {
-    getNewsData();
-  }, [page, getNewsData]);
+    getNewsList();
+  }, [page, getNewsList]);
 
   // 使用 observer 引用对象来观察页面底部的虚拟加载元素
   useEffect(() => {
