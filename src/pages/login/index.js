@@ -22,10 +22,10 @@ export default function Vip() {
         <div className="w-full h-screen box-border bg-[url('~@/static/images/vip/bg.avif')] bg-no-repeat bg-[center_top] bg-cover"></div>
       </div>
       <div className="relative p-8 box-border  z-[9] flex flex-col text-[white] mt-16">
-        <h3 className="mb-12 text-xl text-center tracking-widest">登录</h3>
+        <h3 className="mb-12 text-2xl text-center tracking-[.3em] font-['FZZZHONGJW']">登录</h3>
         <ul>
           <li className="flex flex-col">
-            <label className={labelClassName}>用户名：</label>
+            <label className={labelClassName}>账号：</label>
             <input id="name" type="text" className={inputClassName} />
           </li>
           <li className="flex flex-col mt-6">

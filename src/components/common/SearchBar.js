@@ -7,13 +7,14 @@
  */
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { BsController, BsDownload, BsClock, BsSearch } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
+import { FcMediumPriority, FcOnlineSupport } from "react-icons/fc";
 import { useDispatch } from "react-redux";
 
-export default function SearchBar(props) {
+export default function SearchBar() {
   const searchIconColor = "#fff";
   const rightIconColor = "#fff";
-  const rightIconSize = 22;
+  const rightIconSize = 26;
   let [searchTxt, setSearchTxt] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -48,9 +49,8 @@ export default function SearchBar(props) {
         <span className="text-sm text-white">{searchTxt}</span>
       </div>
       <div className="flex flex-row gap-[10px]">
-        <BsController size={rightIconSize} color={rightIconColor} />
-        <BsDownload size={rightIconSize} color={rightIconColor} />
-        <BsClock size={rightIconSize} color={rightIconColor} />
+        <FcMediumPriority size={rightIconSize} color={rightIconColor} />
+        <FcOnlineSupport size={rightIconSize} color={rightIconColor} />
       </div>
     </div>
   );

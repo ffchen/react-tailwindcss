@@ -1,7 +1,7 @@
 /*
  * @Author: ff-chen
  * @Date: 2023-06-26 14:28:22
- * @FilePath: /qq-video/src/components/common/TabBar.js
+ * @FilePath: /react-tailwindcss/src/components/common/TabBar.js
  * @Description: TabBar
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
@@ -11,8 +11,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import {
   BsFillHouseFill,
   BsFillHddRackFill,
-  BsVimeo,
-  BsChatLeftDotsFill,
+  BsGiftFill,
+  BsFillChatLeftHeartFill,
   BsFillEmojiSmileFill,
 } from "react-icons/bs";
 
@@ -25,8 +25,8 @@ export default function TabBar() {
   const iconComponents = {
     BsFillHouseFill,
     BsFillHddRackFill,
-    BsVimeo,
-    BsChatLeftDotsFill,
+    BsGiftFill,
+    BsFillChatLeftHeartFill,
     BsFillEmojiSmileFill,
   };
 
@@ -65,13 +65,13 @@ export default function TabBar() {
     },
     {
       id: 3,
-      icon: "BsVimeo",
-      label: "VIP",
+      icon: "BsGiftFill",
+      label: "会员",
       url: "/vip",
     },
     {
       id: 4,
-      icon: "BsChatLeftDotsFill",
+      icon: "BsFillChatLeftHeartFill",
       label: "消息",
       url: "/msg",
     },
@@ -89,8 +89,8 @@ export default function TabBar() {
   });
 
   return (
-    <div className="w-full h-[var(--tabBar-height)] box-border backdrop-blur-md bg-[#fafafa]/50 border-t border-t-[#efefef]/50 fixed left-0 bottom-0 z-10">
-      <ul className="flex flex-row mt-[10px] mx-[10px]">
+    <div className="w-full flex flex-row items-center  h-[var(--tabBar-height)] box-border backdrop-blur-md bg-[#fafafa]/50 border-t border-t-[#efefef]/50 fixed left-0 bottom-0 z-10">
+      <ul className="flex flex-row flex-1">
         {navList.map((navItem) => (
           <li
             className="flex-1 flex flex-col justify-center items-center"
@@ -104,7 +104,7 @@ export default function TabBar() {
             />
             <span
               className={[
-                "text-sm  mt-[5px] antialiased",
+                "text-xs  mt-[7px] antialiased font-['FZZZHONGJW']",
                 navItem.isAtc ? `text-[${atcColor}]` : `text-[${fontColor}]`,
               ].join(" ")}
             >

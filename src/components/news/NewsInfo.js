@@ -3,7 +3,7 @@
  * @Date: 2023-07-14 11:46:29
  * @FilePath: /react-tailwindcss/src/components/news/NewsInfo.js
  * @Description: BDI指数
- * Copyright (c) 2023 by ff-chen, All Rights Reserved. 
+ * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
 import React, { useState } from "react";
 import { useMount } from "ahooks";
@@ -13,8 +13,8 @@ import {
   BsFillCaretDownFill,
   BsFillCaretUpFill,
   BsCloudSunFill,
-  BsCloudFog2Fill,
 } from "react-icons/bs";
+import { RiTyphoonFill } from "react-icons/ri";
 
 export default function NewsInfo() {
   let [bdiData, setBdiData] = useState({});
@@ -80,14 +80,14 @@ export default function NewsInfo() {
       <div className="w-[1px] h-full bg-gradient-to-b from-[#fff] from-10% via-[#eee] via-50% to-[#fff] to-90% mx-1"></div>
       <div className="flex flex-col w-[100px] justify-center items-center">
         <span className="w-[43px] h-[43px] bg-gradient-to-br from-[#3587e4] to-[#42abf9] rounded-full flex justify-center items-center">
-          <BsCloudSunFill size={20} color="#fff" />
+          <BsCloudSunFill size={22} color="#fff" />
         </span>
         <em className="not-italic mt-2 text-sm">海洋气象</em>
       </div>
       <div className="w-[1px] h-full bg-gradient-to-b from-[#fff] from-10% via-[#eee] via-50% to-[#fff] to-90% mx-1"></div>
       <div className="flex flex-col w-[100px] justify-center items-center">
         <span className="w-[43px] h-[43px] bg-gradient-to-br from-[#fd9f4d] to-[#fec065] rounded-full flex justify-center items-center">
-          <BsCloudFog2Fill size={20} color="#fff" />
+          <RiTyphoonFill size={24} color="#fff" />
         </span>
         <em className="not-italic mt-2 text-sm">台风实时路径</em>
       </div>
