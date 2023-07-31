@@ -49,7 +49,7 @@ export default function TabBar() {
     getCurPage(url);
   }
 
-  let [navList, setNavList] = useState([
+  const [navList, setNavList] = useState([
     {
       id: 1,
       icon: "BsFillHouseFill",
@@ -84,7 +84,7 @@ export default function TabBar() {
   ]);
 
   useMount(() => {
-    let { pathname } = location;
+    const { pathname } = location;
     getCurPage(pathname);
   });
 
@@ -104,7 +104,7 @@ export default function TabBar() {
             />
             <span
               className={[
-                "text-xs  mt-[7px] antialiased font-['FZZZHONGJW']",
+                "text-xs  mt-[7px] antialiased font-['FZJW']",
                 navItem.isAtc ? `text-[${atcColor}]` : `text-[${fontColor}]`,
               ].join(" ")}
             >

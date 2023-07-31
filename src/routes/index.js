@@ -68,7 +68,7 @@ export default createBrowserRouter([
       },
       {
         path: "/mine",
-        element: requireAuth(Mine), // 注意这里传递的是组件名
+        element: requireAuth(Mine),
       },
     ],
   },

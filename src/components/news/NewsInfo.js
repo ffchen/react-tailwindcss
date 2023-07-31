@@ -24,7 +24,7 @@ export default function NewsInfo() {
   };
   const lineStyle =
     "w-[1px] h-full bg-gradient-to-b from-[#fff] from-10% via-[#eee] via-50% to-[#fff] to-90% mx-1";
-  const textStyle = "not-italic mt-2 text-xs font-['FZZZHONGJW']";
+  const textStyle = "not-italic mt-2 text-xs font-['FZJW']";
   const iconStyle =
     "w-[43px] h-[43px] bg-gradient-to-br rounded-full flex justify-center items-center";
 
@@ -54,7 +54,7 @@ export default function NewsInfo() {
   return (
     <div className="mt-3 w-full h-[110px] bg-white rounded-md flex flex-row p-3">
       <div className="flex flex-col flex-1 justify-center items-center">
-        <em className="font-['FZZZHONGJW'] not-italic text-base">BDI指数</em>
+        <em className="font-['FZJW'] not-italic text-base">BDI指数</em>
         <span className="flex flex-row justify-center items-center">
           <DynamicComponent
             componentName={

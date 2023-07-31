@@ -10,7 +10,7 @@ import React from "react";
 export default function BlockTitle(props) {
   const { title } = props;
   return (
-    <h3 className="font-['FZZZHONGJW'] flex flex-row items-center">
+    <h3 className="font-['FZJW'] flex flex-row items-center">
       <i className="block w-[4px] h-[16px] bg-[#2e90fa] mr-1.5 mt-[-3px]"></i>
       <span>{title}</span>
     </h3>

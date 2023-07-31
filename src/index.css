@@ -42,7 +42,7 @@
 
 
 @font-face {
-  font-family: "FZZZHONGJW";
+  font-family: "FZJW";
   src: url("~@/static/font/FZZZHONGJW.TTF") format("truetype");
 }
 
@@ -60,3 +60,4 @@ input[type=password] {
   /**ios下面input选中会出现短暂的阴影**/
   -webkit-appearance: none;
 }
+

@@ -37,8 +37,7 @@ export default function HomeSlider(props) {
         </ul>
       </div>
     ),
-
-    afterChange: (currentSlide) => {
+    afterChange: (currentSlide) => { 
       getImage(sliderList[currentSlide]["imageUrl"]);
     },
   };

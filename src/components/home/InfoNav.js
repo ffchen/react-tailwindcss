@@ -50,12 +50,12 @@ export default function InfoNav() {
           className={`flex-1 h-[80px] rounded-md text-white flex flex-col p-3 relative overflow-hidden bg-[${item.bg}] `}
           key={index}
         >
-          <em className="not-italic  text-[16px] font-['FZZZHONGJW']">
+          <em className="not-italic  text-[16px] font-['FZJW']">
             {item.name}
           </em>
           <span className="text-sm">{item.label}</span>
           {item.text ? (
-            <span className="text-xs mt-[4px] font-['FZZZHONGJW'] text-white/25">{item.text}</span>
+            <span className="text-xs mt-[4px] font-['FZJW'] text-white/25">{item.text}</span>
           ) : (
             ""
           )}

@@ -15,7 +15,7 @@ export default function SearchBar() {
   const searchIconColor = "#fff";
   const rightIconColor = "#fff";
   const rightIconSize = 26;
-  let [searchTxt, setSearchTxt] = useState(null);
+  const [searchTxt, setSearchTxt] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

@@ -8,6 +8,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Loading from "@/components/common/Loading";
 import { getNewsInfoListNew } from "@/apis/news";
 import { timeFormat } from "@/utils/filter";
 
@@ -110,7 +111,7 @@ export default function NewsList() {
         ))}
       </ul>
       <div id="observer" className="py-3 text-[#333] text-sm">
-        {isLoading && "Loading..."}
+        {isLoading && <Loading />}
       </div>
     </div>
   );

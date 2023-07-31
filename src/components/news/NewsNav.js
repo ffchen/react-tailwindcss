@@ -43,7 +43,7 @@ export default function NewsNav() {
             <em
               key={item.id}
               className={[
-                "not-italic whitespace-nowrap mr-4 font-['FZZZHONGJW']  text-sm",
+                "not-italic whitespace-nowrap mr-4 font-['FZJW']  text-sm",
                 item.id === typeId ? `text-[#ffc100]` : `text-white`,
               ].join(" ")}
               onClick={() => changeType(item.id)}
