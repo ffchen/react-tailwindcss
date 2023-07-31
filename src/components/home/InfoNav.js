@@ -55,7 +55,7 @@ export default function InfoNav() {
           </em>
           <span className="text-sm">{item.label}</span>
           {item.text ? (
-            <span className="text-xs mt-[3px] text-white/30">{item.text}</span>
+            <span className="text-xs mt-[4px] font-['FZZZHONGJW'] text-white/25">{item.text}</span>
           ) : (
             ""
           )}

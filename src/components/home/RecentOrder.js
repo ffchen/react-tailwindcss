@@ -8,7 +8,7 @@
 import React, { useState } from "react";
 import { useMount } from "ahooks";
 import { getRecentOrders } from "@/apis/home.js";
-import { BsPlus } from "react-icons/bs";
+import { BsFillCaretRightFill } from "react-icons/bs";
 import BlockTitle from "@/components/common/BlockTitle";
 export default function RecentOrder() {
   const [orderList, setOrderList] = useState([]);
@@ -32,7 +32,7 @@ export default function RecentOrder() {
             className="w-full h-[38px] flex flex-row items-center text-left overflow-hidden  text-ellipsis whitespace-nowrap border-b border-[#f5f5f5] last:border-0"
           >
             <span className="w-[16px]">
-              <BsPlus size={14} color="#999" />
+              <BsFillCaretRightFill size={12} color="#ccc" />
             </span>
             <span className="flex-1 text-ellipsis whitespace-nowrap overflow-hidden pr-4 text-sm">
               {item.shipName}({item.goodsCounts}

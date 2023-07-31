@@ -50,7 +50,7 @@ export default function SearchBar() {
       </div>
       <div className="flex flex-row gap-[10px]">
         <FcMediumPriority size={rightIconSize} color={rightIconColor} />
-        <FcOnlineSupport size={rightIconSize} color={rightIconColor} />
+        <FcOnlineSupport size={rightIconSize} color={rightIconColor} className="animate-[wiggle_1s_ease-in-out_infinite]"/>
       </div>
     </div>
   );

@@ -17,11 +17,16 @@ import {
 import { RiTyphoonFill } from "react-icons/ri";
 
 export default function NewsInfo() {
-  let [bdiData, setBdiData] = useState({});
+  const [bdiData, setBdiData] = useState({});
   const iconComponents = {
     BsFillCaretDownFill,
     BsFillCaretUpFill,
   };
+  const lineStyle =
+    "w-[1px] h-full bg-gradient-to-b from-[#fff] from-10% via-[#eee] via-50% to-[#fff] to-90% mx-1";
+  const textStyle = "not-italic mt-2 text-xs font-['FZZZHONGJW']";
+  const iconStyle =
+    "w-[43px] h-[43px] bg-gradient-to-br rounded-full flex justify-center items-center";
 
   // 设置动态组件
   function DynamicComponent({ componentName, ...props }) {
@@ -77,19 +82,23 @@ export default function NewsInfo() {
         </span>
         <span className="text-xs text-[#999]">{bdiData.dateStr}</span>
       </div>
-      <div className="w-[1px] h-full bg-gradient-to-b from-[#fff] from-10% via-[#eee] via-50% to-[#fff] to-90% mx-1"></div>
+      <div className={lineStyle}></div>
       <div className="flex flex-col w-[100px] justify-center items-center">
-        <span className="w-[43px] h-[43px] bg-gradient-to-br from-[#3587e4] to-[#42abf9] rounded-full flex justify-center items-center">
+        <span className={`${iconStyle} from-[#3587e4] to-[#42abf9]`}>
           <BsCloudSunFill size={22} color="#fff" />
         </span>
-        <em className="not-italic mt-2 text-sm">海洋气象</em>
+        <em className={textStyle}>海洋气象</em>
       </div>
-      <div className="w-[1px] h-full bg-gradient-to-b from-[#fff] from-10% via-[#eee] via-50% to-[#fff] to-90% mx-1"></div>
+      <div className={lineStyle}></div>
       <div className="flex flex-col w-[100px] justify-center items-center">
-        <span className="w-[43px] h-[43px] bg-gradient-to-br from-[#fd9f4d] to-[#fec065] rounded-full flex justify-center items-center">
-          <RiTyphoonFill size={24} color="#fff" />
+        <span className={`${iconStyle} from-[#fd9f4d] to-[#fec065]`}>
+          <RiTyphoonFill
+            size={24}
+            color="#fff"
+            className="animate-[spin_2s_linear_infinite]"
+          />
         </span>
-        <em className="not-italic mt-2 text-sm">台风实时路径</em>
+        <em className={textStyle}>台风实时路径</em>
       </div>
     </div>
   );
