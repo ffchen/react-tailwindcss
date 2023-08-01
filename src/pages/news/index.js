@@ -13,16 +13,22 @@ import NewsSwiper from "@/components/common/Swiper";
 import NewsInfo from "@/components/news/NewsInfo";
 import FreightRate from "@/components/news/FreightRate";
 import NewsList from "@/components/news/NewsList";
+import NavPopup from "@/components/news/NavPopup";
 import { getBanner } from "@/apis/home";
 
 export default function Home() {
   const [imageUrl, setImageUrl] = useState("");
   const [sliderList, setSliderList] = useState([]);
   const [isFixed, setIsFixed] = useState(false);
+  const [showNav, setShowNav] = useState(false);
   const headerRef = useRef(null);
 
   function getSliderImage(val) {
     setImageUrl(val);
+  }
+
+  function getShowNav(val) {
+    setShowNav(val);
   }
 
   // 获取轮播图数据
@@ -40,7 +46,7 @@ export default function Home() {
     }
   }
 
-  useMount(async () => {
+  useMount(() => {
     getSwiper();
   });
 
@@ -58,6 +64,7 @@ export default function Home() {
 
   return (
     <div className={`pt-[30px] px-4`}>
+      {showNav ? <NavPopup getShowNav={getShowNav} /> : ""}
       <div className="w-full h-full absolute overflow-hidden left-0  top-0 z-[1]">
         <div
           style={{ backgroundImage: `url(${imageUrl})` }}
@@ -69,12 +76,12 @@ export default function Home() {
           ref={headerRef}
           className={
             isFixed
-              ? "w-full box-border fixed bg-[#261448]/60 backdrop-blur-md shadow-sm shadow-[#261448]/50 left-0 top-0 z-[1] p-4 transition-all"
+              ? "w-full box-border fixed bg-[#261448]/60 backdrop-blur-md shadow-sm shadow-[#261448]/50 left-0 top-0 z-[1] p-4 animate-[fadeIn_0.6s_ease-in]"
               : ""
           }
         >
           <SearchBar />
-          <NewsNav />
+          <NewsNav getShowNav={getShowNav} />
         </div>
         <NewsSwiper getImage={getSliderImage} sliderList={sliderList} />
         <NewsInfo />

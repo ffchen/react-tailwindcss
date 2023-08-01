@@ -11,7 +11,8 @@ import { useDispatch } from "react-redux";
 import { getNewsTypeList } from "@/apis/news";
 import { BsGrid } from "react-icons/bs";
 
-export default function NewsNav() {
+export default function NewsNav(props) {
+  const { getShowNav } = props;
   const dispatch = useDispatch();
   const [typeList, setTypeList] = useState([]);
   const [typeId, setTypeId] = useState(1);
@@ -24,13 +25,13 @@ export default function NewsNav() {
       setTypeList(data);
     }
   }
-  
+
   function changeType(id) {
-    setTypeId(id)
+    setTypeId(id);
     dispatch({ type: "SET_NEWS_TYPE", payload: id });
   }
 
-  useMount(async () => {
+  useMount(() => {
     dispatch({ type: "SET_NEWS_TYPE", payload: 1 });
     getNewsType();
   });
@@ -54,7 +55,7 @@ export default function NewsNav() {
         </div>
       </div>
       <div className="w-[30px] flex flex-row justify-end">
-        <BsGrid size={20} color="#fff" />
+        <BsGrid size={20} color="#fff" onClick={() => getShowNav(true)} />
       </div>
     </div>
   );

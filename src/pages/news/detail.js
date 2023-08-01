@@ -37,9 +37,7 @@ export default function NewsDetail() {
       <PageTitle
         title={newsData.typeName}
         showBack={true}
-        rightIcon={
-          <BsBoxArrowUp size={22} color="#fff" onClick={() => shareEvent()} />
-        }
+        rightIcon={<BsBoxArrowUp size={22} color="#fff" onClick={shareEvent} />}
       />
       <div className="p-4 flex flex-col">
         <h2 className="text-xl">{newsData.title}</h2>

@@ -39,7 +39,7 @@ export default function Home() {
     }
   }
 
-  useMount(async () => {
+  useMount(() => {
     getSwiper();
   });
 

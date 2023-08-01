@@ -57,7 +57,7 @@ export default function HomeNav() {
     }
   }
 
-  useMount(async () => {
+  useMount(() => {
     getNavList();
   });
 
