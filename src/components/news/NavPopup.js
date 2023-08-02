@@ -30,10 +30,19 @@ export default function NavPopup(props) {
     } = navPop;
     classList.remove("animate-[fadeIn_0.6s_ease-in-out]");
     classList.add("animate-[fadeOut_0.6s_ease-in-out]");
+    // 当遮罩层消失时 恢复滚动条
+    document.body.style.overflow = "auto";
     timer = setTimeout(() => getShowNav(false), 400);
   }
 
   useEffect(() => {
+    // 禁止透过遮罩层滚动页面
+    const { current } = navPop;
+    current.addEventListener("touchmove", (e) => e.preventDefault(), {
+      passive: false,
+    });
+    // 当遮罩层出现时 隐藏滚动条
+    document.body.style.overflow = "hidden";
     getNewsType();
     return () => clearTimeout(timer); // 组件卸载时清除定时器
   }, [timer]);
@@ -46,7 +55,8 @@ export default function NavPopup(props) {
       <div className="flex flex-row justify-end">
         <BsXLg color="#fff" size={25} onClick={handlerClose} />
       </div>
-      <div className="flex-1 flex flex-row justify-center items-center">
+      <div className="flex-1 flex flex-col items-center mt-10">
+        <h1 className="text-white text-lg mb-8">新闻分类</h1>
         <ul className="grid grid-cols-3 gap-x-4 gap-y-8 w-full">
           {typeList.map((typeItem, index) => (
             <li

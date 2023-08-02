@@ -8,28 +8,23 @@
 import service from "@/utils/request";
 
 const BANNER_PATH = "/xcw/android/3/api/base";
-// const INFO_PATH = "/xcw/android/3/api/info";
+const BASE_PATH = "/xcw/web/2/api/base";
+
 // 获取 banner
-export function getBanner(params) {
-  return service(`${BANNER_PATH}/getBanners`, {
+export const getBanner = (params) =>
+  service(`${BANNER_PATH}/getBanners`, {
     method: "GET",
     params,
   });
-}
-
-
-export function getRecentOrders(params) {
-  return service(`/xcw/web/2/api/base/getRecentOrders`, {
+// 近期成交
+export const getRecentOrders = (params) =>
+  service(`${BASE_PATH}/getRecentOrders`, {
     method: "GET",
     params,
   });
-}
-
 // 便捷服务
-export function getDictByPid(params) {
-  return service({
-    url: `${BANNER_PATH}/getDictByPid`,
-    method: "get",
+export const getDictByPid = (params) =>
+  service(`${BANNER_PATH}/getDictByPid`, {
+    method: "GET",
     params,
   });
-}
