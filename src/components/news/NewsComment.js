@@ -7,6 +7,7 @@
  */
 
 import { BsChatDots } from "react-icons/bs";
+
 export default function NewsComment() {
   return (
     <div className="w-full h-[60px] flex flex-row items-center box-border px-4 bg-white shadow-[0_-5px_10px_-3px_rgba(0,0,0,0.1)] fixed left-0 bottom-0 z-[1]">

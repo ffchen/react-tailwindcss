@@ -5,7 +5,7 @@
  * @Description:资讯首页
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useMount } from "ahooks";
 import SearchBar from "@/components/common/SearchBar";
 import NewsNav from "@/components/news/NewsNav";
@@ -46,19 +46,17 @@ export default function Home() {
     }
   }
 
-  useMount(() => {
-    getSwiper();
-  });
+  useMount(() => getSwiper());
 
   useEffect(() => {
     const handleScroll = () => {
       setIsFixed(window.scrollY > 0);
     };
-
+    // 监听是否滚动页面
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll); // 移除监听事件
     };
   }, []);
 

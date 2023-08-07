@@ -5,44 +5,25 @@
  * @Description: 导航模块
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React, { useState } from "react";
+import { useState } from "react";
 import { BsShieldFillCheck, BsGlobeAmericas } from "react-icons/bs";
+import $C from "@/configs/config";
 import { BiSolidShip } from "react-icons/bi";
 
 export default function InfoNav() {
+  const [navList] = useState($C.INDEX_INFONAV);
   const iconComponents = {
     BiSolidShip,
     BsShieldFillCheck,
     BsGlobeAmericas,
   };
+  
   // 设置动态组件
   function DynamicComponent({ componentName, ...props }) {
     const Component = iconComponents[componentName];
     return <Component {...props} />;
   }
-
-  const [navList] = useState([
-    {
-      name: "船查查",
-      label: "21469艘",
-      bg: "#408aff",
-      icon: "BiSolidShip",
-    },
-    {
-      name: "船货保险",
-      label: "在线投保",
-      text: "7*24小时",
-      bg: "#f89f00",
-      icon: "BsShieldFillCheck",
-    },
-    {
-      name: "航运圈",
-      label: "373条",
-      bg: "#f27429",
-      isNew: true,
-      icon: "BsGlobeAmericas",
-    },
-  ]);
+ 
   return (
     <div className="flex mt-3 gap-2.5">
       {navList.map((item, index) => (

@@ -7,13 +7,13 @@
  */
 
 export default function Loading() {
-  const animateStyle = "animate-[loadingF_1.6s_linear_infinite]";
   const loadStr = "Loading...";
+  
   return (
     <div>
       {[...loadStr].map((letter, index) => (
         <span
-          className={`${animateStyle}`}
+          className="animate-[fadeOut_1.6s_linear_infinite]"
           style={{ animationDelay: `${480 + 120 * index}ms` }}
           key={index}
         >

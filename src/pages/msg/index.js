@@ -5,8 +5,6 @@
  * @Description:消息
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React from "react";
-
 export default function Vip() {
   return <div>消息</div>;
 }

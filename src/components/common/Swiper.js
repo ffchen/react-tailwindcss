@@ -5,7 +5,6 @@
  * @Description: 通用轮播模块
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 
@@ -37,7 +36,7 @@ export default function HomeSlider(props) {
         </ul>
       </div>
     ),
-    afterChange: (currentSlide) => { 
+    afterChange: (currentSlide) => {
       getImage(sliderList[currentSlide]["imageUrl"]);
     },
   };

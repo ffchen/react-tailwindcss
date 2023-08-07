@@ -5,7 +5,7 @@
  * @Description:搜索页
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { BsSearch, BsFillTrashFill } from "react-icons/bs";
 

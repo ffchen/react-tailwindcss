@@ -5,7 +5,7 @@
  * @Description:首页
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React, { useState } from "react";
+import { useState } from "react";
 import { useMount } from "ahooks";
 import SearchBar from "@/components/common/SearchBar";
 import HomeSwiper from "@/components/common/Swiper";
@@ -17,8 +17,8 @@ import HomeNav from "@/components/home/HomeNav";
 import { getBanner } from "@/apis/home";
 
 export default function Home() {
-  let [imageUrl, setImageUrl] = useState("");
-  let [sliderList, setSliderList] = useState([]);
+  const [imageUrl, setImageUrl] = useState("");
+  const [sliderList, setSliderList] = useState([]);
 
   function getSliderImage(val) {
     setImageUrl(val);
@@ -39,9 +39,7 @@ export default function Home() {
     }
   }
 
-  useMount(() => {
-    getSwiper();
-  });
+  useMount(() => getSwiper());
 
   return (
     <div className={`pt-[30px] px-4`}>

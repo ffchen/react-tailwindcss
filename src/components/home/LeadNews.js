@@ -5,7 +5,7 @@
  * @Description:首页海运头条模块
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React, { useState } from "react";
+import { useState } from "react";
 import { useMount } from "ahooks";
 import { useNavigate } from "react-router-dom";
 import { getNewsInfoListNew } from "@/apis/news";
@@ -29,6 +29,7 @@ export default function LeadNews() {
     verticalSwiping: true,
   };
 
+  // 获取资讯数据
   async function getNews() {
     let params = {
       rows: 20,
@@ -39,9 +40,7 @@ export default function LeadNews() {
     if (res.code === 1) setNewsList(splitData(res.data.list, 2));
   }
 
-  useMount(() => {
-    getNews();
-  });
+  useMount(() => getNews());
 
   return (
     <div className="mt-3 w-full h-[74px] bg-white rounded-md flex flex-row items-center px-2">

@@ -5,9 +5,10 @@
  * @Description: TabBar
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React, { useState } from "react";
+import { useState } from "react";
 import { useMount } from "ahooks";
 import { useNavigate, useLocation } from "react-router-dom";
+import $C from "@/configs/config";
 import {
   BsFillHouseFill,
   BsFillHddRackFill,
@@ -17,11 +18,13 @@ import {
 } from "react-icons/bs";
 
 export default function TabBar() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [navList, setNavList] = useState($C.TABBAR_LIST);
+  // 图标、字体，样式
   const fontSzie = 19;
   const fontColor = "#121212";
   const atcColor = "#2e90fa";
-  const location = useLocation();
-  const navigate = useNavigate();
   const iconComponents = {
     BsFillHouseFill,
     BsFillHddRackFill,
@@ -49,40 +52,7 @@ export default function TabBar() {
     getCurPage(url);
   }
 
-  const [navList, setNavList] = useState([
-    {
-      id: 1,
-      icon: "BsFillHouseFill",
-      label: "首页",
-      url: "/",
-      isAtc: true,
-    },
-    {
-      id: 2,
-      icon: "BsFillHddRackFill",
-      label: "资讯",
-      url: "/news",
-    },
-    {
-      id: 3,
-      icon: "BsGiftFill",
-      label: "会员",
-      url: "/vip",
-    },
-    {
-      id: 4,
-      icon: "BsFillChatLeftHeartFill",
-      label: "消息",
-      url: "/msg",
-    },
-    {
-      id: 5,
-      icon: "BsFillEmojiSmileFill",
-      label: "我的",
-      url: "/mine",
-    },
-  ]);
-
+  // 组件初始化
   useMount(() => {
     const { pathname } = location;
     getCurPage(pathname);

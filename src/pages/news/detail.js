@@ -5,7 +5,7 @@
  * @Description: 资讯详情页
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React, { useState } from "react";
+import { useState } from "react";
 import { useMount } from "ahooks";
 import { useParams } from "react-router-dom";
 import PageTitle from "@/components/common/PageTitle";
@@ -17,6 +17,7 @@ import { timeFormat } from "@/utils/filter";
 export default function NewsDetail() {
   const { id } = useParams();
   const [newsData, setNewsData] = useState({});
+
   // 分享事件
   function shareEvent() {
     console.log("分享事件");
@@ -28,9 +29,7 @@ export default function NewsDetail() {
     if (code === 1) setNewsData(data);
   }
 
-  useMount(() => {
-    getDetail();
-  });
+  useMount(() => getDetail());
 
   return (
     <div className="pt-[48px] pb-[60px]">

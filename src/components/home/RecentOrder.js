@@ -5,26 +5,27 @@
  * @Description: 近期成交
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React, { useState } from "react";
+import { useState } from "react";
 import { useMount } from "ahooks";
 import { getRecentOrders } from "@/apis/home.js";
 import { BsFillCaretRightFill } from "react-icons/bs";
 import BlockTitle from "@/components/common/BlockTitle";
 export default function RecentOrder() {
   const [orderList, setOrderList] = useState([]);
+  const titleName = "近期成交";
 
+  // 获取近期成交订单
   async function getOrder() {
     let res = await getRecentOrders();
     if (res.code === 1) setOrderList(res.data.slice(0, 5));
   }
 
-  useMount(() => {
-    getOrder();
-  });
+  // 组件初始化
+  useMount(() => getOrder());
 
   return (
     <div className="mt-3 w-full bg-white rounded-md flex flex-col p-3">
-      <BlockTitle title="近期成交" />
+      <BlockTitle title={titleName} />
       <ul>
         {orderList.map((item, index) => (
           <li

@@ -5,7 +5,7 @@
  * @Description: BDI指数
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React, { useState } from "react";
+import { useState } from "react";
 import { useMount } from "ahooks";
 import moment from "moment";
 import { getBdiByDate } from "@/apis/news.js";
@@ -22,6 +22,7 @@ export default function NewsInfo() {
     BsFillCaretDownFill,
     BsFillCaretUpFill,
   };
+  // 复用样式
   const lineStyle =
     "w-[1px] h-full bg-gradient-to-b from-[#fff] from-10% via-[#eee] via-50% to-[#fff] to-90% mx-1";
   const textStyle = "not-italic mt-2 text-xs font-['FZJW']";
@@ -47,9 +48,7 @@ export default function NewsInfo() {
     }
   }
 
-  useMount(() => {
-    getBdi();
-  });
+  useMount(() => getBdi());
 
   return (
     <div className="mt-3 w-full h-[110px] bg-white rounded-md flex flex-row p-3">

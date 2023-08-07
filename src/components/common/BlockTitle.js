@@ -5,10 +5,10 @@
  * @Description: 模块标题
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React from "react";
 
 export default function BlockTitle(props) {
   const { title } = props;
+  
   return (
     <h3 className="font-['FZJW'] flex flex-row items-center">
       <i className="block w-[4px] h-[16px] bg-[#2e90fa] mr-1.5 mt-[-3px]"></i>

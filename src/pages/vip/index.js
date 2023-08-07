@@ -5,8 +5,6 @@
  * @Description:vip
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React from "react";
-
 export default function Vip() {
   return <div className="w-full min-h-screen overflow-hidden">vip</div>;
 }

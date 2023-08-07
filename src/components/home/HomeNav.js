@@ -5,7 +5,7 @@
  * @Description: 便捷服务
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React, { useState } from "react";
+import { useState } from "react";
 import { useMount } from "ahooks";
 import { getDictByPid } from "@/apis/home";
 import { splitData } from "@/utils/tools";
@@ -15,7 +15,6 @@ import "slick-carousel/slick/slick.css";
 
 export default function HomeNav() {
   const [navList, setNavList] = useState([]);
-
   const settings = {
     dots: true,
     infinite: true,
@@ -43,11 +42,14 @@ export default function HomeNav() {
       </div>
     ),
   };
+  const titleName = "便捷服务";
 
+  // 获取导航数据
   async function getNavList() {
-    let res = await getDictByPid({ dictCodeP: 11400 });
-    if (res.code === 1) {
-      let list = res.data.map((item) => ({
+    const res = await getDictByPid({ dictCodeP: 11400 });
+    const { code, data } = res;
+    if (code === 1) {
+      let list = data.map((item) => ({
         id: item.dictCode,
         name: item.note,
         icon: item.iconUrl,
@@ -57,13 +59,12 @@ export default function HomeNav() {
     }
   }
 
-  useMount(() => {
-    getNavList();
-  });
+  // 组件初始化
+  useMount(() => getNavList());
 
   return (
     <div className="mt-3 w-full bg-white rounded-md flex flex-col p-3">
-      <BlockTitle title="便捷服务" />
+      <BlockTitle title={titleName} />
       <div className="mt-[10px]">
         <Slider {...settings}>
           {navList.map((swiper, index) => {

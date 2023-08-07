@@ -5,7 +5,7 @@
  * @Description: 资讯分类
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React, { useState } from "react";
+import { useState } from "react";
 import { useMount } from "ahooks";
 import { useDispatch } from "react-redux";
 import { getNewsTypeList } from "@/apis/news";

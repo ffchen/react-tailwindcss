@@ -5,23 +5,25 @@
  * @Description: 顶部搜索栏
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import $C from "@/configs/config";
 import { BsSearch } from "react-icons/bs";
 import { FcMediumPriority, FcOnlineSupport } from "react-icons/fc";
-import { useDispatch } from "react-redux";
 
 export default function SearchBar() {
-  const searchIconColor = "#fff";
-  const rightIconColor = "#fff";
-  const rightIconSize = 26;
   const [searchTxt, setSearchTxt] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  // Icon 样式
+  const searchIconColor = "#fff";
+  const rightIconColor = "#fff";
+  const rightIconSize = 26;
 
   // 模拟 获取 热门搜索词
   function getHotLabel() {
-    const hotLabels = ["船查查", "船货保险", "航运圈", "近期成交", "海运头条"];
+    const hotLabels = $C.HOT_LABELS;
     const len = hotLabels.length;
     let randomNum = Math.floor(Math.random() * len);
     setSearchTxt(hotLabels[randomNum]);
@@ -50,7 +52,11 @@ export default function SearchBar() {
       </div>
       <div className="flex flex-row gap-[10px]">
         <FcMediumPriority size={rightIconSize} color={rightIconColor} />
-        <FcOnlineSupport size={rightIconSize} color={rightIconColor} className="animate-[wiggle_1s_ease-in-out_infinite]"/>
+        <FcOnlineSupport
+          size={rightIconSize}
+          color={rightIconColor}
+          className="animate-[wiggle_1s_ease-in-out_infinite]"
+        />
       </div>
     </div>
   );

@@ -5,14 +5,14 @@
  * @Description: 导航弹窗
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { getNewsTypeList } from "@/apis/news";
 import { BsXLg } from "react-icons/bs";
 
 export default function NavPopup(props) {
   const { getShowNav } = props;
-  const [typeList, setTypeList] = useState([]);
   const navPop = useRef(null);
+  const [typeList, setTypeList] = useState([]);
 
   // 获取资讯导航
   async function getNewsType() {

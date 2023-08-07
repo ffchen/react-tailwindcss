@@ -5,7 +5,7 @@
  * @Description: 运价行情
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React, { useState } from "react";
+import { useState } from "react";
 import { useMount } from "ahooks";
 import { getNewProperties } from "@/apis/news";
 import Slider from "react-slick";
@@ -27,7 +27,8 @@ export default function FreightRate() {
     verticalSwiping: true,
   };
 
-  async function getNews() {
+  // 获取运价行情数据
+  async function getData() {
     let res = await getNewProperties();
     let {
       code,
@@ -36,16 +37,12 @@ export default function FreightRate() {
     if (code === 1) setRateList(cbcfiInfoListRtnDtos);
   }
 
-  useMount(() => {
-    getNews();
-  });
+  useMount(() => getData());
 
   return (
     <div className="mt-3 w-full h-[74px] bg-white rounded-md flex flex-row items-center px-2">
       <div className="w-[45px] flex flex-col justify-center items-center mr-3">
-        <span className="text-center font-['FZJW']  flex-1 mt-[4px]">
-          运价
-        </span>
+        <span className="text-center font-['FZJW']  flex-1 mt-[4px]">运价</span>
         <span className="text-center text-[#ff0000] font-['FZJW'] flex-1">
           行情
         </span>

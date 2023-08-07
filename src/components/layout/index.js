@@ -5,7 +5,6 @@
  * @Description: 布局
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React from "react";
 import { Outlet } from "react-router-dom";
 import TabBar from "@/components/common/TabBar";
 

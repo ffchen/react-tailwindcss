@@ -5,7 +5,7 @@
  * @Description:登录页
  * Copyright (c) 2023 by ff-chen, All Rights Reserved.
  */
-import React, { useState } from "react";
+import { useState } from "react";
 import { debounce } from "@/utils/tools";
 export default function Vip() {
   const [username, setUsername] = useState("");
